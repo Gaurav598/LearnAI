@@ -1,0 +1,1221 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="AI-generated website">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="index, follow">
+
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+             colors: {
+                primary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      </script>
+
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <style>
+
+      * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+        ::-webkit-scrollbar {
+          width: 0px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background: #666;
+        }
+
+        * {
+          -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        :focus-visible {
+          outline: 2px solid currentColor;
+          outline-offset: 2px;
+        }
+
+        @media print {
+          .no-print {
+            display: none !important;
+          }
+          
+          a[href]:after {
+            content: " (" attr(href) ")";
+          }
+        }
+      </style>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                  const tempImage = new Image();
+                  tempImage.onload = () => {
+                    img.src = img.dataset.src;
+                    img.classList.remove('opacity-0');
+                    img.classList.add('opacity-100');
+                  };
+                  tempImage.src = img.dataset.src;
+                  img.removeAttribute('data-src');
+                  observer.unobserve(img);
+                }
+              }
+            });
+          }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+          });
+
+          const loadImage = (img) => {
+            if ('loading' in HTMLImageElement.prototype) {
+              img.loading = 'lazy';
+            }
+            
+            img.classList.add('transition-opacity', 'duration-300', 'opacity-0');
+            
+            img.onerror = () => {
+              const width = img.getAttribute('width') || img.clientWidth || 300;
+              const height = img.getAttribute('height') || img.clientHeight || 200;
+              img.src = `https://placehold.co/${width}x${height}/DEDEDE/555555?text=Image+Unavailable`;
+              img.alt = 'Image unavailable';
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100', 'error-image');
+            };
+
+            if (img.dataset.src) {
+              imageObserver.observe(img);
+            } else {
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100');
+            }
+          };
+
+          document.querySelectorAll('img[data-src], img:not([data-src])').forEach(loadImage);
+
+          new MutationObserver((mutations) => {
+            mutations.forEach(mutation => {
+              mutation.addedNodes.forEach(node => {
+                if (node.nodeType === 1) {
+                  if (node.tagName === 'IMG') {
+                    loadImage(node);
+                  }
+                  node.querySelectorAll('img').forEach(loadImage);
+                }
+              });
+            });
+          }).observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        });
+
+        if ('performance' in window && 'PerformanceObserver' in window) {
+
+          const observer = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            entries.forEach((entry) => {
+              if (entry.entryType === 'largest-contentful-paint') {
+              }
+              if (entry.entryType === 'first-input') {
+              }
+              if (entry.entryType === 'layout-shift') {
+              }
+            });
+          });
+
+          observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+          window.addEventListener('load', () => {
+            const timing = performance.getEntriesByType('navigation')[0];
+            console.log({
+              'DNS Lookup': timing.domainLookupEnd - timing.domainLookupStart,
+              'TCP Connection': timing.connectEnd - timing.connectStart,
+              'DOM Content Loaded': timing.domContentLoadedEventEnd - timing.navigationStart,
+              'Page Load': timing.loadEventEnd - timing.navigationStart
+            });
+          });
+        }
+
+        window.addEventListener('online', () => {
+          document.body.classList.remove('offline');
+          console.log('Connection restored');
+        });
+        window.addEventListener('offline', () => {
+          document.body.classList.add('offline');
+          console.log('Connection lost');
+        });
+      </script>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+      <header class="relative z-50 bg-white dark:bg-gray-900">
+      </header>
+
+      <main id="main-content" class="flex-1 relative ">
+      </main>
+
+   </body>
+</html><element id="83916f37-e876-4aca-8d7b-2eb8ffa8e62a" data-section-id="83916f37-e876-4aca-8d7b-2eb8ffa8e62a">
+
+<htmlCode>
+<div id="root">
+    <nav id="navbar" class="bg-neutral-900 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-white text-xl font-bold">LearnAI</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#hero" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="#features" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                            <a href="#roadmap" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Roadmap</a>
+                            <a href="#courses" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Courses</a>
+                            <a href="#gamification" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Gamification</a>
+                            <a href="#community" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Community</a>
+                            <a href="#contact" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hidden md:block animate__animated animate__fadeIn">Sign Up</button>
+                    <button class="bg-transparent border border-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hidden md:block animate__animated animate__fadeIn">Login</button>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#hero" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#features" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Features</a>
+                <a href="#roadmap" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Roadmap</a>
+                <a href="#courses" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Courses</a>
+                <a href="#gamification" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Gamification</a>
+                <a href="#community" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Community</a>
+                <a href="#contact" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <div class="pt-4 flex flex-col gap-2">
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full">Sign Up</button>
+                    <button class="bg-transparent border border-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full">Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 0) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</div>
+</htmlCode></element><element id="ee0534e3-6dc3-4396-a19b-ab19897506ed" data-section-id="ee0534e3-6dc3-4396-a19b-ab19897506ed">
+
+<htmlCode>
+<div id="root">
+    <section id="hero" class="bg-neutral-900 min-h-[70vh] pt-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col items-center justify-center min-h-[calc(70vh-4rem)] text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 animate__animated animate__fadeInDown">
+                    Want to level up your skills?<br/>
+                    <span class="text-indigo-400">Let's create your personalized roadmap!</span>
+                </h1>
+                
+                <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-8 animate__animated animate__fadeIn animate__delay-1s">
+                    Harness the power of AI to craft your perfect learning journey. Master coding, develop soft skills, and accelerate your career growth.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 animate__animated animate__fadeInUp animate__delay-2s">
+                    <button class="px-8 py-4 bg-indigo-600 text-white rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-all transform hover:scale-105">
+                        Get Started
+                    </button>
+                    <button class="px-8 py-4 bg-transparent border-2 border-indigo-400 text-white rounded-lg text-lg font-semibold hover:bg-indigo-400/10 transition-all transform hover:scale-105">
+                        Sign Up
+                    </button>
+                </div>
+
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center animate__animated animate__fadeIn animate__delay-3s">
+                    <div class="p-4 bg-neutral-800/50 rounded-lg backdrop-blur-sm">
+                        <div class="text-3xl text-indigo-400 mb-2">🎯</div>
+                        <h3 class="text-white font-semibold">Personalized AI Roadmaps</h3>
+                    </div>
+                    <div class="p-4 bg-neutral-800/50 rounded-lg backdrop-blur-sm">
+                        <div class="text-3xl text-indigo-400 mb-2">🤖</div>
+                        <h3 class="text-white font-semibold">AI Tutoring</h3>
+                    </div>
+                    <div class="p-4 bg-neutral-800/50 rounded-lg backdrop-blur-sm">
+                        <div class="text-3xl text-indigo-400 mb-2">🎮</div>
+                        <h3 class="text-white font-semibold">Gamified Learning</h3>
+                    </div>
+                    <div class="p-4 bg-neutral-800/50 rounded-lg backdrop-blur-sm">
+                        <div class="text-3xl text-indigo-400 mb-2">💼</div>
+                        <h3 class="text-white font-semibold">Career Opportunities</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute w-96 h-96 bg-indigo-600/20 rounded-full filter blur-3xl animate-blob"></div>
+            <div class="absolute w-96 h-96 bg-purple-600/20 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
+            <div class="absolute w-96 h-96 bg-pink-600/20 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
+        </div>
+    </section>
+
+    <style>
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+</div>
+</htmlCode></element><element id="2b6dbc6e-8156-4e90-8bf9-20d85267d8f7" data-section-id="2b6dbc6e-8156-4e90-8bf9-20d85267d8f7">
+
+<htmlCode>
+<div id="root">
+    <section id="features" class="py-20 bg-neutral-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-neutral-900 mb-4 animate__animated animate__fadeIn">Revolutionary Learning Features</h2>
+                <p class="text-lg text-neutral-600 max-w-2xl mx-auto animate__animated animate__fadeIn">Unlock your potential with our AI-powered learning platform</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 animate__animated animate__fadeInUp">
+                    <div class="w-14 h-14 bg-indigo-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-900 mb-4">Personalized AI Roadmaps</h3>
+                    <p class="text-neutral-600">Custom-tailored learning paths that adapt to your progress and goals in real-time.</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center text-neutral-600">
+                            <svg class="w-4 h-4 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Skill-based assessment
+                        </li>
+                        <li class="flex items-center text-neutral-600">
+                            <svg class="w-4 h-4 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Dynamic path adjustment
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="w-14 h-14 bg-indigo-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-900 mb-4">AI Tutoring</h3>
+                    <p class="text-neutral-600">24/7 intelligent tutoring support for both technical and soft skills development.</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center text-neutral-600">
+                            <svg class="w-4 h-4 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Instant feedback
+                        </li>
+                        <li class="flex items-center text-neutral-600">
+                            <svg class="w-4 h-4 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Personalized assistance
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="w-14 h-14 bg-indigo-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-900 mb-4">Gamified Learning</h3>
+                    <p class="text-neutral-600">Learn through interactive challenges, quizzes, and competitive tournaments.</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center text-neutral-600">
+                            <svg class="w-4 h-4 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Daily challenges
+                        </li>
+                        <li class="flex items-center text-neutral-600">
+                            <svg class="w-4 h-4 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Reward system
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <button class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-all transform hover:scale-105 animate__animated animate__fadeInUp animate__delay-3s">
+                    Explore All Features
+                </button>
+            </div>
+        </div>
+    </section>
+</div>
+</htmlCode></element><element id="eea34b74-c2c1-462e-95f5-c36d9ae0a3ce" data-section-id="eea34b74-c2c1-462e-95f5-c36d9ae0a3ce">
+
+<htmlCode>
+<div id="root">
+    <section id="roadmap" class="py-20 bg-neutral-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate__animated animate__fadeIn">
+                <h2 class="text-4xl font-bold mb-4">Your AI-Powered Learning Journey</h2>
+                <p class="text-lg text-neutral-400 max-w-2xl mx-auto">Personalized milestones and adaptive learning paths designed for your success</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 animate__animated animate__fadeInLeft">
+                    <div class="bg-neutral-800 p-6 rounded-xl border border-indigo-500/20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">Skill Assessment</h3>
+                        </div>
+                        <p class="text-neutral-400">AI analyzes your current skills and identifies growth opportunities</p>
+                    </div>
+
+                    <div class="bg-neutral-800 p-6 rounded-xl border border-indigo-500/20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">Customized Path</h3>
+                        </div>
+                        <p class="text-neutral-400">Personalized learning roadmap based on your goals and preferences</p>
+                    </div>
+
+                    <div class="bg-neutral-800 p-6 rounded-xl border border-indigo-500/20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">Adaptive Learning</h3>
+                        </div>
+                        <p class="text-neutral-400">Dynamic path adjustment based on your performance and progress</p>
+                    </div>
+                </div>
+
+                <div class="relative animate__animated animate__fadeInRight">
+                    <div class="bg-neutral-800 p-8 rounded-xl border border-indigo-500/20">
+                        <h3 class="text-2xl font-bold mb-6">Your Learning Progress</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-neutral-400">Python Basics</span>
+                                    <span class="text-indigo-400">80%</span>
+                                </div>
+                                <div class="h-2 bg-neutral-700 rounded-full">
+                                    <div class="h-2 bg-indigo-600 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-neutral-400">Web Development</span>
+                                    <span class="text-indigo-400">60%</span>
+                                </div>
+                                <div class="h-2 bg-neutral-700 rounded-full">
+                                    <div class="h-2 bg-indigo-600 rounded-full" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-neutral-400">Soft Skills</span>
+                                    <span class="text-indigo-400">45%</span>
+                                </div>
+                                <div class="h-2 bg-neutral-700 rounded-full">
+                                    <div class="h-2 bg-indigo-600 rounded-full" style="width: 45%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="w-full mt-8 bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition-all">
+                            Track Your Progress
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</htmlCode></element><element id="6db20441-edf9-415f-b716-992cb048cec1" data-section-id="6db20441-edf9-415f-b716-992cb048cec1">
+
+<htmlCode>
+<div id="root">
+    <section id="courses" class="py-20 bg-neutral-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate__animated animate__fadeIn">
+                <h2 class="text-4xl font-bold text-neutral-900 mb-4">Explore Our Courses</h2>
+                <p class="text-lg text-neutral-600 max-w-2xl mx-auto">Master both technical and soft skills with our AI-powered learning platform</p>
+            </div>
+
+            <div class="mb-12">
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button class="px-6 py-2 rounded-full bg-indigo-600 text-white font-semibold">All Courses</button>
+                    <button class="px-6 py-2 rounded-full bg-neutral-200 text-neutral-700 font-semibold hover:bg-indigo-600 hover:text-white transition-all">Programming</button>
+                    <button class="px-6 py-2 rounded-full bg-neutral-200 text-neutral-700 font-semibold hover:bg-indigo-600 hover:text-white transition-all">Soft Skills</button>
+                    <button class="px-6 py-2 rounded-full bg-neutral-200 text-neutral-700 font-semibold hover:bg-indigo-600 hover:text-white transition-all">Career Development</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden animate__animated animate__fadeInUp">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm font-semibold">Programming</span>
+                            <span class="text-neutral-600 font-medium">Beginner</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutral-900 mb-2">Python Fundamentals</h3>
+                        <p class="text-neutral-600 mb-4">Master Python basics with AI-guided tutorials and hands-on projects</p>
+                        <div class="flex items-center mb-4">
+                            <div class="w-full bg-neutral-200 rounded-full h-2">
+                                <div class="bg-indigo-600 rounded-full h-2" style="width: 75%"></div>
+                            </div>
+                            <span class="ml-2 text-sm text-neutral-600">75%</span>
+                        </div>
+                        <button class="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-all">Start Learning</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm font-semibold">Soft Skills</span>
+                            <span class="text-neutral-600 font-medium">Intermediate</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutral-900 mb-2">Communication Skills</h3>
+                        <p class="text-neutral-600 mb-4">Enhance your communication with AI-powered practice sessions</p>
+                        <div class="flex items-center mb-4">
+                            <div class="w-full bg-neutral-200 rounded-full h-2">
+                                <div class="bg-indigo-600 rounded-full h-2" style="width: 45%"></div>
+                            </div>
+                            <span class="ml-2 text-sm text-neutral-600">45%</span>
+                        </div>
+                        <button class="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-all">Start Learning</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm font-semibold">Programming</span>
+                            <span class="text-neutral-600 font-medium">Advanced</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutral-900 mb-2">Web Development</h3>
+                        <p class="text-neutral-600 mb-4">Build modern websites with hands-on projects and AI feedback</p>
+                        <div class="flex items-center mb-4">
+                            <div class="w-full bg-neutral-200 rounded-full h-2">
+                                <div class="bg-indigo-600 rounded-full h-2" style="width: 30%"></div>
+                            </div>
+                            <span class="ml-2 text-sm text-neutral-600">30%</span>
+                        </div>
+                        <button class="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-all">Start Learning</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 animate__animated animate__fadeIn">
+                <button class="px-8 py-3 bg-neutral-900 text-white rounded-lg font-semibold hover:bg-neutral-800 transition-all inline-flex items-center">
+                    View All Courses
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+</div>
+</htmlCode></element><element id="4dad5a28-9acb-44fc-8f49-636b27b217c2" data-section-id="4dad5a28-9acb-44fc-8f49-636b27b217c2">
+
+<htmlCode>
+<div id="root">
+    <section id="gamification" class="py-20 bg-neutral-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate__animated animate__fadeIn">
+                <h2 class="text-4xl font-bold mb-4">Level Up Your Learning</h2>
+                <p class="text-lg text-neutral-400 max-w-2xl mx-auto">Transform your learning journey into an exciting adventure with our gamified experience</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-neutral-800 rounded-xl p-6 animate__animated animate__fadeInLeft">
+                    <h3 class="text-2xl font-bold mb-6">Top Performers</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center bg-neutral-700/50 p-4 rounded-lg">
+                            <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center font-bold">1</div>
+                            <div class="ml-4 flex-grow">
+                                <h4 class="font-semibold">Alex Johnson</h4>
+                                <p class="text-neutral-400 text-sm">Python Master</p>
+                            </div>
+                            <div class="text-indigo-400 font-bold">2,450 pts</div>
+                        </div>
+                        <div class="flex items-center bg-neutral-700/50 p-4 rounded-lg">
+                            <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center font-bold">2</div>
+                            <div class="ml-4 flex-grow">
+                                <h4 class="font-semibold">Sarah Chen</h4>
+                                <p class="text-neutral-400 text-sm">Web Developer</p>
+                            </div>
+                            <div class="text-indigo-400 font-bold">2,280 pts</div>
+                        </div>
+                        <div class="flex items-center bg-neutral-700/50 p-4 rounded-lg">
+                            <div class="w-10 h-10 bg-indigo-400 rounded-full flex items-center justify-center font-bold">3</div>
+                            <div class="ml-4 flex-grow">
+                                <h4 class="font-semibold">Mike Smith</h4>
+                                <p class="text-neutral-400 text-sm">AI Enthusiast</p>
+                            </div>
+                            <div class="text-indigo-400 font-bold">2,150 pts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-800 rounded-xl p-6 animate__animated animate__fadeInRight">
+                    <h3 class="text-2xl font-bold mb-6">Daily Challenges</h3>
+                    <div class="space-y-4">
+                        <div class="bg-neutral-700/50 p-4 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-semibold">Complete Python Quiz</h4>
+                                <span class="text-indigo-400">+100 pts</span>
+                            </div>
+                            <div class="w-full bg-neutral-600 rounded-full h-2 mb-2">
+                                <div class="bg-indigo-600 rounded-full h-2" style="width: 75%"></div>
+                            </div>
+                            <p class="text-sm text-neutral-400">3/4 completed</p>
+                        </div>
+                        <div class="bg-neutral-700/50 p-4 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-semibold">Solve Coding Challenge</h4>
+                                <span class="text-indigo-400">+200 pts</span>
+                            </div>
+                            <div class="w-full bg-neutral-600 rounded-full h-2 mb-2">
+                                <div class="bg-indigo-600 rounded-full h-2" style="width: 30%"></div>
+                            </div>
+                            <p class="text-sm text-neutral-400">1/3 completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 animate__animated animate__fadeInUp">
+                <div class="bg-neutral-800 p-6 rounded-xl text-center hover:transform hover:scale-105 transition-all">
+                    <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Achievements</h3>
+                    <p class="text-neutral-400">Unlock badges and showcase your skills</p>
+                </div>
+
+                <div class="bg-neutral-800 p-6 rounded-xl text-center hover:transform hover:scale-105 transition-all">
+                    <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Skill Streaks</h3>
+                    <p class="text-neutral-400">Maintain your learning momentum</p>
+                </div>
+
+                <div class="bg-neutral-800 p-6 rounded-xl text-center hover:transform hover:scale-105 transition-all">
+                    <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Rewards</h3>
+                    <p class="text-neutral-400">Earn points and unlock premium content</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</htmlCode></element><element id="0740e76f-bf2a-4de9-afca-aea46d21123d" data-section-id="0740e76f-bf2a-4de9-afca-aea46d21123d">
+
+<htmlCode>
+<div id="root">
+    <section id="testimonials" class="py-20 bg-neutral-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate__animated animate__fadeIn">
+                <h2 class="text-4xl font-bold text-neutral-900 mb-4">Success Stories</h2>
+                <p class="text-lg text-neutral-600 max-w-2xl mx-auto">Hear from our learners who transformed their careers with AI-powered learning</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg animate__animated animate__fadeInUp">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
+                            RK
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-neutral-900">Rachel Kim</h4>
+                            <p class="text-neutral-600">Software Engineer at Google</p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex text-indigo-500 mb-2">
+                            ★★★★★
+                        </div>
+                        <p class="text-neutral-700">"The AI-guided learning path helped me structure my journey from a beginner to landing my dream job. The personalized feedback was invaluable!"</p>
+                    </div>
+                    <div class="text-sm text-neutral-500">Completed Python and Web Development tracks</div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
+                            JP
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-neutral-900">James Parker</h4>
+                            <p class="text-neutral-600">Full Stack Developer</p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex text-indigo-500 mb-2">
+                            ★★★★★
+                        </div>
+                        <p class="text-neutral-700">"The gamification aspect kept me motivated throughout. I never thought learning could be this engaging and effective!"</p>
+                    </div>
+                    <div class="text-sm text-neutral-500">Mastered 5 programming languages</div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
+                            AS
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-neutral-900">Anna Smith</h4>
+                            <p class="text-neutral-600">Product Manager at Microsoft</p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex text-indigo-500 mb-2">
+                            ★★★★★
+                        </div>
+                        <p class="text-neutral-700">"The soft skills training and mock interviews prepared me perfectly for my career transition into product management."</p>
+                    </div>
+                    <div class="text-sm text-neutral-500">Completed Leadership & PM certification</div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center animate__animated animate__fadeIn">
+                <button class="inline-flex items-center px-8 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-all">
+                    View More Success Stories
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <script>
+            const testimonials = document.querySelectorAll('#testimonials .animate__fadeInUp');
+            setInterval(() => {
+                testimonials.forEach((testimonial, index) => {
+                    setTimeout(() => {
+                        testimonial.classList.remove('animate__fadeInUp');
+                        void testimonial.offsetWidth;
+                        testimonial.classList.add('animate__fadeInUp');
+                    }, index * 200);
+                });
+            }, 5000);
+        </script>
+    </section>
+</div>
+</htmlCode></element><element id="78ce678c-988c-4c5f-a9b4-ccaba1a96a05" data-section-id="78ce678c-988c-4c5f-a9b4-ccaba1a96a05">
+
+<htmlCode>
+<div id="root">
+    <section id="community" class="py-20 bg-neutral-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate__animated animate__fadeIn">
+                <h2 class="text-4xl font-bold mb-4">Join Our Learning Community</h2>
+                <p class="text-lg text-neutral-400 max-w-2xl mx-auto">Connect with fellow learners, share experiences, and grow together</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-neutral-800 rounded-xl p-6 animate__animated animate__fadeInUp">
+                    <div class="w-14 h-14 bg-indigo-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Discussion Forums</h3>
+                    <p class="text-neutral-400 mb-6">Engage in discussions, ask questions, and share your knowledge with the community.</p>
+                    <button class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-all">Join Discussions</button>
+                </div>
+
+                <div class="bg-neutral-800 rounded-xl p-6 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="w-14 h-14 bg-indigo-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Find a Mentor</h3>
+                    <p class="text-neutral-400 mb-6">Connect with industry experts who can guide you through your learning journey.</p>
+                    <button class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-all">Connect with Mentors</button>
+                </div>
+
+                <div class="bg-neutral-800 rounded-xl p-6 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="w-14 h-14 bg-indigo-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Study Groups</h3>
+                    <p class="text-neutral-400 mb-6">Join or create study groups to learn collaboratively with peers.</p>
+                    <button class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-all">Find Study Groups</button>
+                </div>
+            </div>
+
+            <div class="bg-neutral-800 rounded-xl p-8 animate__animated animate__fadeIn">
+                <h3 class="text-2xl font-bold mb-6">Active Discussions</h3>
+                <div class="space-y-4">
+                    <div class="border-b border-neutral-700 pb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-semibold">Tips for Python Beginners</h4>
+                            <span class="text-neutral-400 text-sm">23 replies</span>
+                        </div>
+                        <p class="text-neutral-400 text-sm">Latest tips and tricks for getting started with Python programming...</p>
+                    </div>
+                    <div class="border-b border-neutral-700 pb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-semibold">Web Development Career Path</h4>
+                            <span class="text-neutral-400 text-sm">45 replies</span>
+                        </div>
+                        <p class="text-neutral-400 text-sm">Discussion about the best path to become a full-stack developer...</p>
+                    </div>
+                    <div class="pb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-semibold">AI Learning Resources</h4>
+                            <span class="text-neutral-400 text-sm">67 replies</span>
+                        </div>
+                        <p class="text-neutral-400 text-sm">Sharing valuable resources for learning artificial intelligence...</p>
+                    </div>
+                </div>
+                <button class="mt-6 w-full bg-neutral-700 text-white py-3 rounded-lg font-semibold hover:bg-neutral-600 transition-all">
+                    View All Discussions
+                </button>
+            </div>
+        </div>
+    </section>
+</div>
+</htmlCode></element><element id="5b74267c-1ab4-438b-9545-a74edb3d1a8a" data-section-id="5b74267c-1ab4-438b-9545-a74edb3d1a8a">
+
+<htmlCode>
+<div id="root">
+    <section id="contact" class="py-20 bg-neutral-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate__animated animate__fadeIn">
+                <h2 class="text-4xl font-bold text-neutral-900 mb-4">Get in Touch</h2>
+                <p class="text-lg text-neutral-600 max-w-2xl mx-auto">Have questions? We're here to help you on your learning journey</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-xl shadow-lg animate__animated animate__fadeInLeft">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="space-y-2">
+                            <label for="name" class="block text-sm font-medium text-neutral-700">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent" required>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="email" class="block text-sm font-medium text-neutral-700">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent" required>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="subject" class="block text-sm font-medium text-neutral-700">Subject</label>
+                            <select id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
+                                <option value="general">General Inquiry</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="billing">Billing Question</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="message" class="block text-sm font-medium text-neutral-700">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent" required></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition-all">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="space-y-8 animate__animated animate__fadeInRight">
+                    <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-neutral-900">Email</h4>
+                                    <p class="text-neutral-600">support@learnai.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-neutral-900">Phone</h4>
+                                    <p class="text-neutral-600">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-6">Frequently Asked Questions</h3>
+                        <div class="space-y-4" id="faq">
+                            <div class="border-b border-neutral-200 pb-4">
+                                <button class="flex justify-between items-center w-full text-left">
+                                    <span class="font-semibold">How does AI personalization work?</span>
+                                    <svg class="w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                    </svg>
+                                </button>
+                                <div class="hidden mt-2 text-neutral-600">
+                                    Our AI analyzes your learning style, goals, and progress to create a customized learning path that adapts to your needs.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.querySelectorAll('#faq button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    content.classList.toggle('hidden');
+                });
+            });
+
+            document.getElementById('contactForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message. We will get back to you soon!');
+            });
+        </script>
+    </section>
+</div>
+</htmlCode></element><element id="4a2497ff-38ef-4c31-8f27-05c2c763b9e5" data-section-id="4a2497ff-38ef-4c31-8f27-05c2c763b9e5">
+
+<htmlCode>
+<div id="root">
+    <footer id="footer" class="bg-neutral-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold mb-4">LearnAI</h3>
+                    <p class="text-neutral-400">Empowering learners with AI-driven personalized education and career development.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#courses" class="text-neutral-400 hover:text-white transition-colors">Courses</a></li>
+                        <li><a href="#roadmap" class="text-neutral-400 hover:text-white transition-colors">Learning Paths</a></li>
+                        <li><a href="#community" class="text-neutral-400 hover:text-white transition-colors">Community</a></li>
+                        <li><a href="#gamification" class="text-neutral-400 hover:text-white transition-colors">Gamification</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">FAQs</a></li>
+                        <li><a href="#contact" class="text-neutral-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Stay Updated</h4>
+                    <p class="text-neutral-400 mb-4">Subscribe to our newsletter for the latest updates and features.</p>
+                    <form class="space-y-2">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 rounded-lg bg-neutral-800 border border-neutral-700 focus:ring-2 focus:ring-indigo-600 focus:border-transparent text-white">
+                        <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-all">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-neutral-800">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-neutral-400 text-sm">&copy; 2024 LearnAI. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-neutral-400 hover:text-white text-sm">Terms of Service</a>
+                        <a href="#" class="text-neutral-400 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-neutral-400 hover:text-white text-sm">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.querySelector('form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for subscribing to our newsletter!');
+            });
+        </script>
+    </footer>
+</div>
+</htmlCode></element>
+            <div id="page_complete">
+            <script>
+                console.log('Page complete');
+            </script>
+            </body>
+            </html>         
